@@ -4,37 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIT ČVUT - Generátor e-mailu</title>
-    <script>
-        function generateEmail() {
-            // Získáme hodnoty z inputů a odstraníme bílé znaky na začátku a na konci
-            let firstName = document.getElementById('firstName').value.trim();
-            let lastName = document.getElementById('lastName').value.trim();
-
-            // Vezmeme 3 první znaky křestního jména a 5 znaků příjmení
-            let emailFirstName = firstName.slice(0, 3).toLowerCase();  // první 3 znaky
-            let emailLastName = lastName.slice(0, 5).toLowerCase();   // prvních 5 znaků
-
-            // Sestavíme e-mailovou adresu
-            let email = emailLastName + emailFirstName + '@fit.cvut.cz';
-
-            // Vypíšeme výslednou e-mailovou adresu do elementu na stránce
-            document.getElementById('emailOutput').textContent = "Váš e-mail: " + email;
-        }
-    </script>
+    <script src="script.js" defer></script> <!-- Externí odkaz na script.js -->
 </head>
 <body>
     <h1>Generátor e-mailu pro FIT ČVUT</h1>
-    
-    <form onsubmit="event.preventDefault(); generateEmail();">
-        <label for="firstName">Křestní jméno:</label><br>
-        <input type="text" id="firstName" name="firstName" required><br><br>
-
-        <label for="lastName">Příjmení:</label><br>
-        <input type="text" id="lastName" name="lastName" required><br><br>
-
-        <input type="submit" value="Vytvořit e-mail">
-    </form>
-
     <p id="emailOutput"></p>
 </body>
 </html>
+
